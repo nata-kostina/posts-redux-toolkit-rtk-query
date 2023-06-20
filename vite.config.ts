@@ -6,10 +6,14 @@ export default defineConfig({
   plugins: [react()],
   server: {
     open: true,
+    cors: {
+      origin: "*",
+    },
   },
   build: {
     outDir: "build",
     sourcemap: true,
+    minify: false,
   },
   test: {
     globals: true,

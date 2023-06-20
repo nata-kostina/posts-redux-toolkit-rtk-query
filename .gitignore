@@ -28,3 +28,7 @@ build
 
 # Miscellaneous
 *.local
+
+src/hooks/useValue.ts
+src/store/slices/*
+src/Child.tsx
