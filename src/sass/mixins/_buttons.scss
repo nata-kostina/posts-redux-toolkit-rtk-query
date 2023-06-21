@@ -1,0 +1,56 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/sizes" as s;
+
+@mixin btn {
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    transition: all 0.2s ease-in;
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus-visible,
+    &:active {
+        outline: none;
+        box-shadow: 0 0.5rem 1rem rgba(c.$color-black-xl, 0.2);
+    }
+    &:focus-visible {
+        transform: translateY(-0.1rem);
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+@mixin btn-secondary {
+    @include btn;
+    border: 1px solid #e5e5e5;
+    color: c.$color-text-m;
+    font-size: s.$font-size-s;
+    padding: 0.5rem 1.5rem;
+
+    &:hover {
+        background-color: c.$color-primary;
+        color: c.$color-white-s;
+    }
+}
+
+@mixin btn-link {
+    &:link,
+    &:visited {
+        text-decoration: none;
+    }
+}
+
+@mixin btn-text {
+    text-transform: capitalize;
+    color: c.$color-text-l;
+    font-weight: 400;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+        color: c.$color-primary;
+    }
+}

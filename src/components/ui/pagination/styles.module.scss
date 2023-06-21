@@ -1,0 +1,21 @@
+@use "../../../sass/abstracts/colors" as c;
+@use "../../../sass/abstracts/sizes" as s;
+@use "../../../sass/mixins/buttons" as b;
+
+.pagination {
+    & .btn-pagination {
+        @include b.btn-secondary;
+        font-size: s.$font-size-m;
+
+        &:hover,
+        &:focus-visible {
+            background-color: transparent;
+            color: c.$color-primary;
+            border-color: c.$color-primary;
+        }
+    }
+
+    & .current-page {
+        margin: 0 1rem;
+    }
+}
