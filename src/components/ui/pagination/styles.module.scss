@@ -3,6 +3,8 @@
 @use "../../../sass/mixins/buttons" as b;
 
 .pagination {
+    color: c.$color-text-m;
+
     & .btn-pagination {
         @include b.btn-secondary;
         font-size: s.$font-size-m;
@@ -12,6 +14,11 @@
             background-color: transparent;
             color: c.$color-primary;
             border-color: c.$color-primary;
+        }
+
+        &:disabled {
+            color: c.$color-grey-s;
+            border-color: c.$color-grey-s;
         }
     }
 

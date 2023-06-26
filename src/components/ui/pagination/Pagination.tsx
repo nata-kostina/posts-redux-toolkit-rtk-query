@@ -1,4 +1,3 @@
-import { useGetPostsQuery } from "../../../store/api/api"
 import { RiArrowLeftSFill, RiArrowRightSFill } from "react-icons/ri"
 import cn from "classnames"
 import styles from "./styles.module.scss"
@@ -6,16 +5,11 @@ import styles from "./styles.module.scss"
 interface Props {
   page: number
   pageLimit: number
+  postTotal: number
   changePage: (value: number) => void
 }
 
-const Pagination = ({ page, pageLimit, changePage }: Props) => {
-  const { data: postTotal } = useGetPostsQuery(
-    { page, pageLimit },
-    {
-      selectFromResult: ({ data }) => ({ data: data?.total ?? 0 }),
-    },
-  )
+const Pagination = ({ page, pageLimit, postTotal, changePage }: Props) => {
   const pageTotal = Math.floor(postTotal / pageLimit)
 
   const onBtnClick = (value: "+" | "-") => {

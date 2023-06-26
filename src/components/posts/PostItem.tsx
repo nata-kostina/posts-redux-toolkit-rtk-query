@@ -10,26 +10,15 @@ import { FaRegComments } from "react-icons/fa"
 import { CiClock2 } from "react-icons/ci"
 import UserAvatar from "../../assets/img/users/avatar.jpg"
 import { useState } from "react"
+import { IPost } from "../../types/entities.types"
 
 interface Props {
-  id: number
-  page: number
-  pageLimit: number
+  post: IPost
 }
 
-const PostItem = ({ id, page, pageLimit }: Props) => {
-  const { post } = useGetPostsQuery(
-    { page, pageLimit },
-    {
-      selectFromResult: ({ data }) => {
-        return {
-          post: data?.posts?.find((post) => post.id === id),
-        }
-      },
-    },
-  )
-  const { data: postImg } = useGetPostImageQuery(id)
-  const { data: comments } = useGetCommentsQuery(id)
+const PostItem = ({ post }: Props) => {
+  const { data: postImg } = useGetPostImageQuery(post.id)
+  const { data: comments } = useGetCommentsQuery(post.id)
   const [showComments, setShowComments] = useState(false)
   const toggleComments = () => {
     setShowComments((prev) => !prev)

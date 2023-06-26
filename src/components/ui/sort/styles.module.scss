@@ -1,0 +1,44 @@
+@use "../../../sass/abstracts/colors" as c;
+@use "../../../sass/abstracts/sizes" as s;
+
+.sorting {
+    width: 20rem;
+    &__group {
+        width: 100%;
+    }
+
+    &__select {
+        height: 30px;
+        width: 100%;
+
+        padding: 0.3rem 2rem 0.3rem 1rem;
+        
+        border: 1px solid c.$color-grey-s;
+        border-radius: 2px;
+        
+        font-size: s.$font-size-s;
+        color: c.$color-text-m;
+
+        transition: color .2s ease-in;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:focus-visible {
+            border-color: c.$color-primary;
+            outline: none;
+        }
+    }
+
+    &__option {
+
+        &_selected {
+            color: c.$color-primary;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

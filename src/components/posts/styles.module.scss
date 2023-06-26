@@ -178,13 +178,11 @@
 
     &__comments {
         max-height: 0px;
-
         overflow: hidden;
-
-        transition: all 0.7s;
+        transition: all 1s ease-out;
 
         &_open {
-            max-height: 100vh;
+            max-height: 100vh;            
         }
 
         & .comments__header {

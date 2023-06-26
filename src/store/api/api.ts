@@ -10,7 +10,8 @@ export const api = createApi({
   tagTypes: ["Post", "Comment"],
   endpoints: (builder) => ({
     getPosts: builder.query<GetPostsResponse, GetPostsArgs>({
-      query: ({ page, pageLimit }) => `posts?_limit=${pageLimit}&_page=${page}`,
+      query: ({ page, pageLimit, sortKey, sortOrder }) =>
+        `posts?_sort=${sortKey}&_order=${sortOrder}&_limit=${pageLimit}&_page=${page}`,
       providesTags: (response) =>
         response?.posts
           ? [

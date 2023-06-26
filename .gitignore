@@ -32,3 +32,6 @@ build
 src/hooks/useValue.ts
 src/store/slices/*
 src/Child.tsx
+
+
+draft.ts

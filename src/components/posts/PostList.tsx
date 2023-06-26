@@ -1,47 +1,16 @@
-import { useState } from "react"
-import { useGetPostsQuery } from "../../store/api/api"
-import Pagination from "../ui/pagination/Pagination"
 import PostItem from "./PostItem"
+import { IPost } from "./../../types/entities.types"
 
-const PostList = () => {
-  const [page, setPage] = useState(1)
-  const [pageLimit, setPageLimit] = useState(5)
+interface Props {
+  posts: Array<IPost>
+}
 
-  const { data, error, isFetching } = useGetPostsQuery(
-    { page, pageLimit },
-    {
-      refetchOnMountOrArgChange: 60,
-      refetchOnReconnect: true,
-    },
-  )
-
-  const changePage = (value: number) => setPage(value)
-
+const PostList = ({ posts }: Props) => {
   return (
     <div>
-      {error ? (
-        "Error!"
-      ) : isFetching ? (
-        "Loading..."
-      ) : data?.posts?.length ? (
-        <>
-          <Pagination
-            page={page}
-            pageLimit={pageLimit}
-            changePage={changePage}
-          />
-          {data?.posts?.map((post) => (
-            <PostItem
-              id={post.id}
-              key={post.id}
-              page={page}
-              pageLimit={pageLimit}
-            />
-          ))}
-        </>
-      ) : (
-        "There are no posts"
-      )}
+      {posts.length
+        ? posts.map((post) => <PostItem post={post} key={post.id} />)
+        : "Not posts"}
     </div>
   )
 }
