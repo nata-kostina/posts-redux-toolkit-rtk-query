@@ -1,5 +1,6 @@
 @use "./sass/abstracts/sizes" as s;
 @use "./sass/abstracts/colors" as c;
+@use "./sass/abstracts/media" as m;
 
 *,
 *::after,
@@ -11,6 +12,10 @@
 
 html {
     font-size: 62.5%;
+
+    @media only screen and (max-width: m.$bp-large) {
+        font-size: 50%;
+    }
 }
 
 body {

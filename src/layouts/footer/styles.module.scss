@@ -1,4 +1,5 @@
 @use "../../sass/abstracts/colors" as c;
+@use "../../sass/abstracts/media" as m;
 @use "../../sass/mixins/utilities" as u;
 @use "../../sass/mixins/links" as l;
 
@@ -55,6 +56,25 @@
         & .author {
             grid-column: 3 / 4;
             justify-self: end;
+        }
+
+        @media only screen and (max-width: m.$bp-small) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, max-content);
+            grid-row-gap: 1.5rem;
+            
+            & .social {
+                &__list {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                }
+            }
+
+            & .author {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+                justify-self: center;
+            }
         }
     }
 }

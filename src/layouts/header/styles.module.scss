@@ -1,5 +1,6 @@
 @use "../../sass/abstracts/colors" as c;
 @use "../../sass/abstracts/sizes" as s;
+@use "../../sass/abstracts/media" as m;
 @use "../../sass/mixins/utilities" as u;
 
 .header {
@@ -23,6 +24,11 @@
         position: fixed;
         top: 2rem;
         right: 7rem;
+
+        @media only screen and (max-width: m.$bp-medium) {
+            top: 2rem;
+            right: 2rem;
+        }
     }
 
     &-checkbox {
@@ -48,6 +54,11 @@
         transition: all 0.5s;
 
         z-index: 10;
+
+        @media only screen and (max-width: m.$bp-medium) {
+            top: 3rem;
+            right: 3rem;
+        }
     }
 
     &-btn {

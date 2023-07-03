@@ -1,4 +1,5 @@
 @use "../../../sass/abstracts/sizes" as s;
+@use "../../../sass/mixins/utilities" as u;
 
 .post-list {
     width: 100%;
@@ -9,7 +10,7 @@
     justify-content: space-between;
     grid-auto-rows: 1fr;
 
-    padding: s.$section-padding;
+    @include u.section-padding;
 
     list-style: none;
 

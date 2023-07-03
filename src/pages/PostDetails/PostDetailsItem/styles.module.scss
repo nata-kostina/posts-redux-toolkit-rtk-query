@@ -1,31 +1,26 @@
 @use "../../../sass/abstracts/colors" as c;
 @use "../../../sass/abstracts/sizes" as s;
+@use "../../../sass/abstracts/media" as m;
 @use "../../../sass/mixins/utilities" as u;
 @use "../../../sass/mixins/grid" as g;
 @use "../../../sass/mixins/links" as l;
 @use "../../../sass/mixins/buttons" as b;
 
 .wrapper {
-    @include u.section;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-row-gap: 5rem;
+    grid-column-gap: 3rem;
+    align-items: start;
 
-    & .container {
-        @include u.container;
+    & > * {
+        border: c.$border-light;
+        font-size: s.$font-size-default;
+        @include u.entity-padding;
     }
 
-    &__inner {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-row-gap: 5rem;
-        grid-column-gap: 3rem;
-        align-items: start;
-
-        padding: s.$section-padding;
-
-        & > * {
-            border: c.$border-light;
-            padding: s.$entity-padding;
-            font-size: s.$font-size-default;
-        }
+    @media only screen and (max-width: m.$bp-medium) {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -34,7 +29,6 @@
 
     display: grid;
     grid-row-gap: 1rem;
-
 
     &__top-info {
         display: grid;
@@ -78,6 +72,8 @@
 
 .forum {
     grid-row: 1 / 2;
+
+    @media only screen and (max-width: m.$bp-medium) {
+        grid-row: 4 / 5;
+    }
 }
-
-

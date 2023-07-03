@@ -1,6 +1,7 @@
 @use "../../sass/abstracts/colors" as c;
 @use "../../sass/abstracts/sizes" as s;
 @use "../../sass/mixins/utilities" as u;
+@use "../../sass/abstracts/media" as m;
 
 .container {
     @include u.container;
@@ -26,9 +27,13 @@
         font-size: s.$font-size-xl;
         font-weight: 300;
         letter-spacing: 1rem;
-        
+
         &__title {
             text-transform: capitalize;
         }
+    }
+
+    @media only screen and (max-width: m.$bp-small) {
+        height: 25rem;
     }
 }

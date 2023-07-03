@@ -30,28 +30,24 @@ const PostDetailsItem = ({ postId }: Props) => {
         <ErrorComponent />
       ) : (
         <div className={styles.wrapper}>
-          <div className={styles.container}>
-            <div className={styles.wrapper__inner}>
-              <div className={styles.post}>
-                <PostImage id={post.id} />
-                <div className={styles["post__top-info"]}>
-                  <CreationDate />
-                  <CommentsLink id={post.id} quantity={1} type="long" />
-                </div>
-                <h2 className={styles["post__title"]}>{post.title}</h2>
-                <p className={styles["post__body"]}>{post.body}</p>
-                <div className={styles.post__footer}>
-                  <Tags tags={post.tags} />
-                  <Social />
-                </div>
-              </div>
-              <div className={styles.sidebar}>
-                <Forums />
-              </div>
-              <Author id={post.userId} />
-              <Comments postId={post.id} />
+          <div className={styles.post}>
+            <PostImage id={post.id} />
+            <div className={styles["post__top-info"]}>
+              <CreationDate />
+              <CommentsLink id={post.id} quantity={1} type="long" />
+            </div>
+            <h2 className={styles["post__title"]}>{post.title}</h2>
+            <p className={styles["post__body"]}>{post.body}</p>
+            <div className={styles.post__footer}>
+              <Tags tags={post.tags} />
+              <Social />
             </div>
           </div>
+          <div className={styles.sidebar}>
+            <Forums />
+          </div>
+          <Author id={post.userId} />
+          <Comments postId={post.id} />
         </div>
       )}
     </>
