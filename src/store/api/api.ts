@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 import { GetPostsArgs, GetPostsResponse } from "../../types/api.types"
-import { IComment, IPost } from "../../types/entities.types"
+import { IComment, IPost, IUser } from "../../types/entities.types"
 
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:3002/",
   }),
-  tagTypes: ["Post", "Comment"],
+  tagTypes: ["Post", "Comment", "User"],
   endpoints: (builder) => ({
     getPosts: builder.query<GetPostsResponse, GetPostsArgs>({
       query: ({ page, pageLimit, sortKey, sortOrder }) =>
@@ -26,6 +26,11 @@ export const api = createApi({
         posts: response,
         total: +(meta?.response?.headers.get("X-Total-Count") ?? 0),
       }),
+    }),
+    getPost: builder.query<IPost, number>({
+      query: (id) => `posts/${id}`,
+      providesTags: (response) =>
+        response ? [{ type: "Post", id: response.id }] : [{ type: "Post" }],
     }),
     getPostImage: builder.query<string, number>({
       queryFn: async (id) => {
@@ -62,12 +67,24 @@ export const api = createApi({
             ]
           : [{ type: "Comment", id: "LIST" }],
     }),
+    getUser: builder.query<IUser, number>({
+      query: (id) => `users/${id}`,
+      providesTags: (response) =>
+        response
+          ? [
+              { type: "User", id: response.id },
+              { type: "User", id: "LIST" },
+            ]
+          : [{ type: "User", id: "List" }],
+    }),
   }),
 })
 
 export const {
   useGetPostsQuery,
   useGetPostImageQuery,
+  useGetPostQuery,
   useDeletePostMutation,
   useGetCommentsQuery,
+  useGetUserQuery,
 } = api

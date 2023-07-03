@@ -1,4 +1,5 @@
 @use "./sass/abstracts/sizes" as s;
+@use "./sass/abstracts/colors" as c;
 
 *,
 *::after,
@@ -14,8 +15,13 @@ html {
 
 body {
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+    font-family: c.$font-default;
     font-weight: 400;
     font-size: s.$font-size-default;
     letter-spacing: 0.08rem;
+}
+
+::selection {
+    color: #FFFFFF;
+    background-color: c.$color-primary;
 }

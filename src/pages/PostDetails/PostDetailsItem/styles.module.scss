@@ -1,0 +1,83 @@
+@use "../../../sass/abstracts/colors" as c;
+@use "../../../sass/abstracts/sizes" as s;
+@use "../../../sass/mixins/utilities" as u;
+@use "../../../sass/mixins/grid" as g;
+@use "../../../sass/mixins/links" as l;
+@use "../../../sass/mixins/buttons" as b;
+
+.wrapper {
+    @include u.section;
+
+    & .container {
+        @include u.container;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-row-gap: 5rem;
+        grid-column-gap: 3rem;
+        align-items: start;
+
+        padding: s.$section-padding;
+
+        & > * {
+            border: c.$border-light;
+            padding: s.$entity-padding;
+            font-size: s.$font-size-default;
+        }
+    }
+}
+
+.post {
+    grid-row: 1 / 2;
+
+    display: grid;
+    grid-row-gap: 1rem;
+
+
+    &__top-info {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        align-items: center;
+        grid-column-gap: 2.5rem;
+
+        color: c.$color-text-s;
+        font-size: 1.2rem;
+    }
+
+    &__title {
+        color: c.$color-text-default;
+        font-size: s.$font-size-m;
+        font-weight: 600;
+    }
+
+    &__body {
+        margin-bottom: 1rem;
+
+        color: c.$color-text-m;
+        font-size: s.$font-size-default;
+        font-weight: 300;
+        text-align: justify;
+        line-height: 1.7;
+    }
+
+    &__footer {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: space-between;
+        align-items: center;
+
+        border-top: 1px solid c.$color-grey-s;
+        padding-top: 2rem;
+
+        font-size: s.$font-size-xs;
+        color: c.$color-text-s;
+    }
+}
+
+.forum {
+    grid-row: 1 / 2;
+}
+
+

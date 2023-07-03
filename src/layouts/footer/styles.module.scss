@@ -1,0 +1,60 @@
+@use "../../sass/abstracts/colors" as c;
+@use "../../sass/mixins/utilities" as u;
+@use "../../sass/mixins/links" as l;
+
+.footer {
+    padding: 2rem 1rem;
+
+    background-color: c.$color-grey-xl;
+
+    color: c.$color-text-s;
+
+    & .container {
+        @include u.container;
+    }
+
+    &__inner {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+
+        & .social {
+            &__list {
+                grid-column: 2 / 3;
+
+                list-style: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &__item {
+                width: 2.5rem;
+                height: 2.5rem;
+
+                &:not(:last-child) {
+                    margin-right: 3.5rem;
+                }
+            }
+
+            &__link {
+                @include l.link(c.$color-text-s, c.$color-primary);
+
+                display: block;
+                width: 100%;
+                height: 100%;
+
+                & svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        & .author {
+            grid-column: 3 / 4;
+            justify-self: end;
+        }
+    }
+}

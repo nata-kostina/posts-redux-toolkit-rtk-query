@@ -1,0 +1,141 @@
+@use "../../sass/abstracts/colors" as c;
+@use "../../sass/abstracts/sizes" as s;
+@use "../../sass/mixins/utilities" as u;
+
+.header {
+    width: 100%;
+
+    & .container {
+        @include u.container;
+    }
+
+    &__inner {
+        width: 100%;
+        position: relative;
+    }
+}
+
+.nav {
+    // visibility: hidden;
+    display: none;
+    &-checkbox,
+    &-btn {
+        position: fixed;
+        top: 2rem;
+        right: 7rem;
+    }
+
+    &-checkbox {
+        width: 1px;
+        height: 1px;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &-background {
+        position: fixed;
+        top: 3rem;
+        right: 8rem;
+
+        width: 2rem;
+        height: 2rem;
+
+        background-image: radial-gradient(circle at top left, c.$color-white-s, darken(c.$color-primary, 20%));
+        border-radius: 50%;
+
+        transition: all 0.5s;
+
+        z-index: 10;
+    }
+
+    &-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 5rem;
+        height: 5rem;
+
+        background-color: c.$color-white-s;
+
+        border-radius: 50%;
+
+        box-shadow: 0rem 1rem 2rem rgba(c.$color-black-xl, 0.4);
+
+        transition: all 0.2s;
+
+        z-index: 11;
+
+        &:hover {
+            cursor: pointer;
+            transform: translateY(-0.2rem);
+        }
+
+        &:active {
+            transform: translateY(-0.1rem);
+            box-shadow: 0rem 0.8rem 1.5rem rgba(c.$color-black-xl, 0.4);
+        }
+
+        & .btn-icon,
+        & .btn-icon::before,
+        & .btn-icon::after {
+            display: block;
+            height: 0.2rem;
+            width: 2.5rem;
+            background-color: c.$color-text-default;
+            transition: all 0.2s;
+        }
+
+        & .btn-icon {
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+            }
+
+            &::before {
+                transform: translateY(-0.7rem);
+            }
+            &::after {
+                transform: translateY(0.7rem);
+            }
+        }
+    }
+
+    &__list {
+    }
+
+    &__item {
+    }
+
+    &__link {
+    }
+
+    // FUNCTIONALITY
+    &-checkbox:focus-visible ~ &-btn {
+        transform: translateY(-0.2rem);
+        background-color: darken(c.$color-primary, 20%);
+
+        & .btn-icon,
+        & .btn-icon::before,
+        & .btn-icon::after {
+            background-color: c.$color-white-s;
+        }
+    }
+
+    &-checkbox:checked ~ &-background {
+        transform: scale(250);
+    }
+
+    &-checkbox:checked ~ &-btn .btn-icon {
+        transform: rotate(45deg);
+    }
+    &-checkbox:checked ~ &-btn .btn-icon::before {
+        transform: translateY(0) rotate(90deg);
+    }
+    &-checkbox:checked ~ &-btn .btn-icon::after {
+        opacity: 0;
+    }
+}

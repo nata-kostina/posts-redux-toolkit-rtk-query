@@ -1,0 +1,38 @@
+@use "../../sass/abstracts/colors" as c;
+@use "../../sass/abstracts/sizes" as s;
+@use "../../sass/mixins/links" as l;
+@use "../../sass/mixins/utilities" as u;
+
+.forums {
+
+    &__heading {
+        margin-bottom: 2rem;
+        color: c.$color-text-default;
+        font-size: s.$font-size-m;
+        font-weight: 700;
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {  
+        font-size: s.$font-size-default;
+        color: c.$color-text-s;
+        font-weight: 400;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include l.link(inherit, c.$color-primary);
+    }
+
+    &__quantity {}
+}

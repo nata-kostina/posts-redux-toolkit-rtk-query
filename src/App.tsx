@@ -1,4 +1,4 @@
-import PostsPage from "./pages/PostsPage"
+import PostsPage from "./pages/Posts/PostsPage"
 
 function App() {
   return (

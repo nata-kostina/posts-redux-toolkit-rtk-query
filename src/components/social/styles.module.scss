@@ -1,0 +1,41 @@
+@use "../../sass/abstracts/colors" as c;
+@use "../../sass/abstracts/sizes" as s;
+@use "../../sass/mixins/links" as l;
+@use "../../sass/mixins/utilities" as u;
+
+.social {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 1.5rem;
+
+    font-size: inherit;
+    font-weight: inherit;
+
+    list-style: none;
+    
+    &__item {
+        width: 3.5rem;
+        height: 3.5rem;
+
+        padding: 0.8rem;
+    
+        color: c.$color-grey-l;
+        background-color: c.$color-white-m;
+        
+        border-radius: 50%;
+     
+        text-align: center;
+    }
+
+    &__link{
+        @include l.link(inherit, c.$color-primary);
+        display: block;
+        height: 100%;
+        width: 100%;
+
+        & svg {
+            height: 100%;
+            width: 100%; 
+        }
+    }
+}

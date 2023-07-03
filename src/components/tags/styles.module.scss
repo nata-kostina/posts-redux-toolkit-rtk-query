@@ -1,0 +1,33 @@
+@use "../../sass/abstracts/colors" as c;
+@use "../../sass/mixins/utilities" as u;
+@use "../../sass/mixins/links" as l;
+
+.tags {
+    display: flex;
+    align-items: center;
+
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+
+    &__icon {
+        @include u.inline-icon;
+    }
+
+    &__list {
+        list-style: none;
+        display: inline-flex;
+    }
+
+    &__item {
+        text-transform: capitalize;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+
+    &__link {
+        @include l.link(c.$color-text-s, c.$color-primary);
+    }
+}

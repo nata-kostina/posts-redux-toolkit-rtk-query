@@ -1,0 +1,24 @@
+@use "../../sass/abstracts/colors" as c;
+@use "../../sass/abstracts/sizes" as s;
+@use "../../sass/mixins/links" as l;
+@use "../../sass/mixins/utilities" as u;
+
+.comments {
+    &__link {
+        @include l.link(inherit, c.$color-primary);
+        display: flex;
+        align-items: center;
+
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit; 
+    }
+
+    &__icon {
+        @include u.inline-icon;
+
+    }
+
+    &__quantity {
+    }
+}

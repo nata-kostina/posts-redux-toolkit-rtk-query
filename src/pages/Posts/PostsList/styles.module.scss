@@ -1,0 +1,23 @@
+@use "../../../sass/abstracts/sizes" as s;
+
+.post-list {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 3rem;
+    justify-content: space-between;
+    grid-auto-rows: 1fr;
+
+    padding: s.$section-padding;
+
+    list-style: none;
+
+    &__item {
+        height: 100%;
+    }
+}
+
+
+
+

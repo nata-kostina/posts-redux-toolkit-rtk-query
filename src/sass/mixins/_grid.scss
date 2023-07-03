@@ -1,0 +1,23 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/sizes" as s;
+
+$gap-hor: 2rem;
+
+@mixin row {
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+}
+
+@mixin col {
+    padding: 2rem;
+    border: 1px solid c.$color-grey-s;
+}
+
+@mixin col-1-of-3 {
+    width: calc((100% - 2*$gap-hor) / 3);
+}
+
+@mixin col-2-of-3 {
+    width: calc(2 * ((100% - 2*$gap-hor) / 3));
+}

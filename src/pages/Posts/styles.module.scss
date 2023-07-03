@@ -1,0 +1,10 @@
+@use "../../sass/abstracts/colors" as c;
+@use "../../sass/abstracts/sizes" as s;
+@use "../../sass/mixins/utilities" as u;
+
+.tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+}

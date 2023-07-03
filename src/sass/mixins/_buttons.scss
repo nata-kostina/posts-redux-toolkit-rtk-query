@@ -4,6 +4,7 @@
 @mixin btn {
     text-align: center;
     border: none;
+    border-radius: unset;
     background-color: transparent;
     transition: all 0.2s ease-in;
     &:hover {

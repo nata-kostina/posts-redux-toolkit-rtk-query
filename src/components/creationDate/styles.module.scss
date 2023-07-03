@@ -1,0 +1,16 @@
+@use "../../sass/abstracts/colors" as c;
+@use "../../sass/mixins/utilities" as u;
+
+.date {
+    display: flex;
+    align-items: center;
+    font-size: inherit;
+    color: inherit;
+    
+    &__icon {
+        @include u.inline-icon;
+    }
+    
+    &__text {
+    }
+}

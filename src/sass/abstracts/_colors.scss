@@ -1,5 +1,5 @@
-$color-primary: #1DA1F2;
-$color-secondary: #cf686c;;
+$color-primary: #1df26f;
+$color-secondary: #cf686c;
 
 $color-text-default: #333333;
 $color-text-s: #999999;
@@ -8,7 +8,19 @@ $color-text-l: #555555;
 $color-text-xl: #2c2c2c;
 
 $color-grey-s: #e5e5e5;
+$color-grey-m: #cccccc;
+$color-grey-l: #aaaaaa;
+$color-grey-xl: #444444;
 
-$color-white-s: #FFFFFF;
+$color-white-s: #ffffff;
+$color-white-m: #f7f8f9;
 
 $color-black-xl: #000000;
+
+$color-transparent-s: rgba(0, 0, 0, 0.11);
+
+$border-light: 1px solid $color-grey-s;
+
+$font-default: 'Roboto', sans-serif;
+$font-highlight: 'Raleway', sans-serif;
+

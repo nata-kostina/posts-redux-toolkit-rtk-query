@@ -1,0 +1,17 @@
+@use "../../../../sass/mixins/utilities" as u;
+
+.post__img-box {
+    height: 40rem;
+
+    margin-bottom: 1rem;
+
+    @include u.img-box;
+
+    & .post__img {
+        @include u.img-cover;
+    }
+
+    &_loading {
+        @include u.skeleton;
+    }
+}
