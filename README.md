@@ -4,8 +4,8 @@ This is a simple SPA that displays a list of posts. The user can click on the po
 
 ## Demo
 
-Here you can see the app: []()
-
+Here you can see the app: [https://stackblitz.com/github/nata-kostina/posts-redux-toolkit-rtk-query/tree/develop](https://stackblitz.com/github/nata-kostina/posts-redux-toolkit-rtk-query/tree/develop)
+(firstly, wait for the server being launched)
 
 ## Features
 
@@ -38,7 +38,7 @@ $ git clone https://github.com/nata-kostina/posts-redux-toolkit-rtk-query.git
 $ npm install
   
 # Run the app
-$ npm run dev
+$ npm run start-dev
 ```
 
 ## What else should be done

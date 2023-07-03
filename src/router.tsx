@@ -4,7 +4,7 @@ import NoMatch from "./components/noMatch/NoMatch"
 import BaseLayout from "./layouts/base/BaseLayout"
 import PostDetails from "./pages/PostDetails/PostDetailsPage"
 import PostsPage from "./pages/Posts/PostsPage"
-import UserPage from "./pages/User/UserPage"
+// import UserPage from "./pages/User/UserPage"
 
 export const router = createBrowserRouter([
   {
@@ -20,10 +20,10 @@ export const router = createBrowserRouter([
         path: "posts/:postId",
         element: <PostDetails />,
       },
-      {
-        path: "users/:userId",
-        element: <UserPage />,
-      },
+      //   {
+      //     path: "users/:userId",
+      //     element: <UserPage />,
+      //   },
     ],
   },
   {
