@@ -1,27 +1,55 @@
-# vite-template-redux
+# Posts *(in process)*
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+This is a simple SPA that displays a list of posts. The user can click on the post to see the details and read the comments.
 
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
+## Demo
+
+Here you can see the app: [https://stackblitz.com/github/nata-kostina/posts-redux-toolkit-rtk-query/tree/develop?startScript=start-dev](https://stackblitz.com/github/nata-kostina/posts-redux-toolkit-rtk-query/tree/develop?startScript=start-dev)
+
+
+## Features
+
+:star2: fetching data with RTK Query;
+
+:star2: routing;
+
+:star2: error handling;
+
+:star2: responsive design;
+
+
+## Built With  
+
+- [Typescript](https://www.typescriptlang.org/) - a strongly typed programming language that builds on JavaScript.
+- [React](https://reactjs.org/) - a JavaScript library for building user interfaces.
+- [Redux Toolkit](https://redux-toolkit.js.org/) - state management tool.
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) - a powerful data fetching and caching tool.
+- [SASS](https://sass-lang.com/) - a CSS pre-processor.
+
+## Getting Started
+
+To clone and run this application, you'll need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com/)) installed on your computer. From your command line:
+
+```
+# Clone this repository
+$ git clone https://github.com/nata-kostina/posts-redux-toolkit-rtk-query.git
+
+# Install dependencies
+$ npm install
+  
+# Run the app
+$ npm run dev
 ```
 
-## Goals
+## What else should be done
+:bulb: implement User Details Page
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+:bulb: implement Dynamic Scrolling
 
-## Scripts
+...
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
 
-## Inspiration
-
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+## Contacts
+- Email: natakostina123@gmail.com
+- LinkedIn: [https://www.linkedin.com/in/nata-kostsina/](https://www.linkedin.com/in/nata-kostsina/)
+- Telegram: @kostinata
